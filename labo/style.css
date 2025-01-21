@@ -1,0 +1,908 @@
+/* Variables */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #0d47a1;
+    --accent-color: #ffc107;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header et Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation du header au scroll */
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 80px; /* Hauteur fixe pour la barre de navigation */
+}
+
+.nav-brand {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.nav-brand span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.university-logo {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.university-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Navigation Responsive */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .nav-logo {
+        order: -1;
+    }
+
+    .university-logo {
+        height: 60px;
+    }
+}
+
+/* Tablette */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .university-logo {
+        height: 65px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.2rem;
+    }
+
+    .university-logo {
+        height: 50px;
+    }
+
+    .nav-links {
+        padding: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation du menu burger */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media (max-width: 968px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-brand, .nav-logo {
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .university-logo {
+        height: 60px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Sections communes */
+section {
+    padding: 5rem 5%;
+}
+
+section:first-of-type {
+    padding-top: 80px; /* Même valeur que la hauteur de .navbar */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1rem auto;
+}
+
+/* Section Recherche */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.research-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+}
+
+.research-item i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.research-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.research-item .team-lead {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Section Équipe */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.team-member p {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.team-member p:last-child {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+}
+
+/* Section Thèmes */
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.theme-item {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.theme-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.theme-item ul {
+    list-style: none;
+}
+
+.theme-item ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.theme-item ul li::before {
+    content: '•';
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+/* Section Publications */
+.publications-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.publication {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.publication:hover {
+    transform: translateX(10px);
+}
+
+.publication h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Section Contact */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Section Organigramme */
+.organigramme {
+    background-color: var(--light-gray);
+    padding: 4rem 2rem;
+}
+
+.org-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.org-box {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.org-box:hover {
+    transform: translateY(-5px);
+}
+
+.org-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.org-content {
+    padding: 1rem 0;
+}
+
+/* Direction */
+.director, .deputy {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.director {
+    border: 2px solid var(--primary-color);
+}
+
+.deputy {
+    border: 2px solid var(--secondary-color);
+}
+
+.director-name, .deputy-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.director-title, .deputy-title {
+    color: var(--secondary-color);
+}
+
+/* Équipes */
+.org-teams {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.team {
+    border: 1px solid var(--accent-color);
+}
+
+.team-title {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.team-members {
+    margin-top: 1rem;
+}
+
+.team-members p {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.team-members ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.team-members li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.team-members li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: -0.5rem;
+}
+
+/* Conseil */
+.council {
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 2px solid var(--accent-color);
+}
+
+.council ul {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+}
+
+.council li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.council li::before {
+    content: '→';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Pattern décoratif pour l'organigramme */
+.decorative-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.decorative-pattern img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+}
+
+.organigramme .content-overlay {
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    background-color: rgba(26, 35, 126, 0.9);
+    color: var(--white);
+    padding: 3rem 5% 1rem;
+    overflow: hidden;
+}
+
+.footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.footer-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    filter: brightness(0.7) contrast(1.2);
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Suppression des styles de la galerie */
+.gallery {
+    display: none;
+}
+
+.carousel-container,
+.carousel-track,
+.carousel-slide,
+.carousel-button,
+.about-grid,
+.about-item {
+    display: none;
+}
+
+/* Styles pour les sections avec images de fond */
+.section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.section-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+section:hover .section-background img {
+    transform: scale(1);
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* Images décoratives */
+.decorative-image {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.decorative-image:hover {
+    opacity: 1;
+}
+
+.decorative-image.left {
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.decorative-image.right {
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.decorative-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer avec image de fond */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.footer-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajustements responsifs */
+@media (max-width: 768px) {
+    .decorative-image {
+        display: none;
+    }
+
+    .decorative-pattern {
+        width: 150px;
+    }
+}
+
+/* Modifications des sections existantes */
+.research, .team, .themes, .organigramme {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem;
+}
+
+.research-grid, .team-grid, .themes-grid {
+    position: relative;
+    z-index: 2;
+}

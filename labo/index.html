@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratoire STIC - Faculté des Sciences El Jadida</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Lab<span>STIC</span></h1>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#equipes">Équipes</a></li>
+                <li><a href="#membres">Membres</a></li>
+                <li><a href="#themes">Thèmes</a></li>
+                <li><a href="#organigramme">Organigramme</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-logo">
+                <img src="images/image.png" alt="Logo STIC" class="university-logo">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="video-background">
+            <video autoplay muted loop id="myVideo">
+                <source src="images/video.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1>Laboratoire STIC</h1>
+            <h2>Sciences et Technologies de l'Information et de la Communication</h2>
+            <h3>Faculté des Sciences d'El Jadida</h3>
+            <p>Mandat 2023 - 2026</p>
+            <a href="#equipes" class="btn">Découvrir nos équipes</a>
+        </div>
+    </section>
+
+    <!-- Section Équipes -->
+    <section id="equipes" class="research">
+        <div class="section-background">
+            <img src="images/carousel-1.jpg" alt="Background">
+        </div>
+        <div class="content-overlay">
+            <h2>Nos Équipes de Recherche</h2>
+            <div class="research-grid">
+                <div class="research-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>RTSA</h3>
+                    <p>Réseaux, Télécommunication et Services Associés</p>
+                    <p class="team-lead">Responsable: Pr. BADDI YOUSSEF</p>
+                </div>
+                <div class="research-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>TICEF</h3>
+                    <p>Technologies de l'Information et de la Communication pour l'Enseignement et la Formation</p>
+                    <p class="team-lead">Responsable: Pr. LAKRAMI FATIMA</p>
+                </div>
+                <div class="research-item">
+                    <i class="fas fa-microchip"></i>
+                    <h3>MM2I</h3>
+                    <p>Microélectronique, Micro-ondes, Instrumentation et Information</p>
+                    <p class="team-lead">Responsable: Pr. AOUTOUL MOHSSIN</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Direction -->
+    <section id="membres" class="team">
+        <div class="decorative-image left">
+            <img src="images/about-1.jpg" alt="Decorative Left">
+        </div>
+        <h2>Direction du Laboratoire</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Pr. LABOUIDYA OUIDAD</h3>
+                <p>Directrice du Laboratoire</p>
+                <p>Sciences et technologies de l'information et de la communication</p>
+            </div>
+            <div class="team-member">
+                <h3>Pr. LAKRAMI FATIMA</h3>
+                <p>Directrice Adjointe</p>
+                <p>Télécoms & Réseaux Informatiques</p>
+            </div>
+        </div>
+        <div class="decorative-image right">
+            <img src="images/about-2.jpg" alt="Decorative Right">
+        </div>
+    </section>
+
+    <!-- Section Organigramme -->
+    <section id="organigramme" class="organigramme">
+        <h2>Organigramme du Laboratoire</h2>
+        <div class="org-container">
+            <div class="org-box director">
+                <h3>Direction du Laboratoire</h3>
+                <div class="org-content">
+                    <p class="director-name">Pr. LABOUIDYA OUIDAD</p>
+                    <p class="director-title">Directrice du Laboratoire</p>
+                </div>
+            </div>
+            
+            <div class="org-box deputy">
+                <h3>Direction Adjointe</h3>
+                <div class="org-content">
+                    <p class="deputy-name">Pr. LAKRAMI FATIMA</p>
+                    <p class="deputy-title">Directrice Adjointe</p>
+                </div>
+            </div>
+
+            <div class="org-teams">
+                <div class="org-box team">
+                    <h3>Équipe RTSA</h3>
+                    <div class="org-content">
+                        <p class="team-lead">Responsable: Pr. BADDI YOUSSEF</p>
+                        <p class="team-title">Réseaux, Télécommunication et Services Associés</p>
+                        <div class="team-members">
+                            <p>Membres permanents:</p>
+                            <ul>
+                                <li>AMRANE SAID</li>
+                                <li>BADDI YOUSSEF</li>
+                                <li>EL KAMOUN NAJIB</li>
+                                <li>HILAL RACHID</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="org-box team">
+                    <h3>Équipe MM2I</h3>
+                    <div class="org-content">
+                        <p class="team-lead">Responsable: Pr. AOUTOUL MOHSSIN</p>
+                        <p class="team-title">Microélectronique, Micro-ondes, Instrumentation et Information</p>
+                        <div class="team-members">
+                            <p>Membres permanents:</p>
+                            <ul>
+                                <li>AOUTOUL MOHSSIN</li>
+                                <li>DLIMI SAID</li>
+                                <li>KHOUKH ABDELAZIZ</li>
+                                <li>SABRI KHALID</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="org-box team">
+                    <h3>Équipe TICEF</h3>
+                    <div class="org-content">
+                        <p class="team-lead">Responsable: Pr. LAKRAMI FATIMA</p>
+                        <p class="team-title">Technologies de l'Information et de la Communication pour l'Enseignement et la Formation</p>
+                        <div class="team-members">
+                            <p>Membres permanents:</p>
+                            <ul>
+                                <li>EL KHADIRI KHALID</li>
+                                <li>LABOUIDYA OUIDAD</li>
+                                <li>LAKRAMI FATIMA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="org-box council">
+                <h3>Conseil du Laboratoire</h3>
+                <div class="org-content">
+                    <ul>
+                        <li>LAKRAMI FATIMA</li>
+                        <li>EL KHADIRI KHALID</li>
+                        <li>BADDI YOUSSEF</li>
+                        <li>AMRANE SAID</li>
+                        <li>AOUTOUL MOHSSIN</li>
+                        <li>DLIMI SAID</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Thèmes -->
+    <section id="themes" class="themes">
+        <div class="section-background">
+            <img src="images/carousel-2.jpg" alt="Background">
+        </div>
+        <div class="content-overlay">
+            <h2>Thèmes de Recherche</h2>
+            <div class="themes-grid">
+                <div class="theme-item">
+                    <h3>Réseaux et Télécommunications</h3>
+                    <ul>
+                        <li>Réseaux de nouvelle génération</li>
+                        <li>Internet des objets (IoT)</li>
+                        <li>Sécurité des réseaux</li>
+                    </ul>
+                </div>
+                <div class="theme-item">
+                    <h3>Systèmes Embarqués</h3>
+                    <ul>
+                        <li>Conception de systèmes</li>
+                        <li>Applications temps réel</li>
+                        <li>Optimisation énergétique</li>
+                    </ul>
+                </div>
+                <div class="theme-item">
+                    <h3>Intelligence Artificielle</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Traitement d'images</li>
+                        <li>Big Data Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informations</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Faculté des Sciences, Route Ben Maachou, 24000 El Jadida, Maroc</p>
+                <p><i class="fas fa-phone"></i> +212 5 23 34 23 25</p>
+                <p><i class="fas fa-envelope"></i> lab.stic@ucd.ac.ma</p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Nom complet" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-background">
+            <img src="images/feature.jpg" alt="Footer Background">
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LabSTIC</h3>
+                <p>Sciences et Technologies de l'Information et de la Communication</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#equipes">Équipes</a></li>
+                    <li><a href="#membres">Membres</a></li>
+                    <li><a href="#themes">Thèmes</a></li>
+                    <li><a href="#organigramme">Organigramme</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-researchgate"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Laboratoire STIC - Faculté des Sciences d'El Jadida. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
